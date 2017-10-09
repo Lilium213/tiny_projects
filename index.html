@@ -7,9 +7,19 @@
   </head>
   <body>
     <p align="center">This is a test html page</p>
-    <video id="video" controls></video>
+    <input type="file" id="track1"/>
+    <button id="button" onclick="subirArchivo()"/>
+    <video id="video"></video>
     <video id="myVideo" src="movie.mp4" autoplay width="320" height="240" controls>
+      <track src="subtitles.vtt" kind="subtitles" srclang="es" label="Español"/>
+      <track id="sub" kind="subtitles" srclang="es" label="Español2"//>
     </video>
     <script src="capture.js"></script>
+    <script> function(){
+      var input=document.getElementById("archivoSubido");
+      var vid=document.getElementById("myVideo");
+      var track1=document.getElementById("sub");
+      track1.src=archivoSubido.files[0];
+    }</script>
   </body>
 </html>
